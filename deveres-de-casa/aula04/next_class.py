@@ -30,6 +30,7 @@ prompt é basicamente uma intrucao textual para um modelo de LLM, funciona como 
 
 Prompt = Context + Task + Expect Output + Restrictions (basic prompt)
 Prompt = Role + Task + Context + Reasoning + Stop Conditions + Expect Output (complex and complet prompt, in my opinion)
++ base de pesquisa (framework, etc) + uso de agentes para validar
 
 role = define o papel do modelo, por exemplo "você é um DBA sênior PostgreSQL"
 task = define a tarefa, por exemplo "você precisa me ajudar a otimizar essa query""
