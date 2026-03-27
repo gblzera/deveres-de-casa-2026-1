@@ -1,0 +1,87 @@
+EXPLICACAO DO TEOREMA MESTRE - Por que e Caso 2 e nao Caso 1?
+==============================================================
+
+Para a recorrencia T(n) = aT(n/b) + f(n), comparamos f(n) com n^log_b(a).
+
+
+OS 3 CASOS DO TEOREMA MESTRE
+-----------------------------
+
+Caso 1: f(n) = O(n^(log_b(a) - e))
+         -> f(n) cresce MAIS DEVAGAR que n^log_b(a)
+
+Caso 2: f(n) = Theta(n^log_b(a))
+         -> f(n) cresce IGUAL a n^log_b(a)
+
+Caso 3: f(n) = Omega(n^(log_b(a) + e))
+         -> f(n) cresce MAIS RAPIDO que n^log_b(a)
+
+
+ANALISANDO O EXEMPLO: a=4, b=2, k=2, p=0
+-----------------------------------------
+
+Passo 1: Calcular log_b(a)
+
+    log_2(4) = 2
+
+
+Passo 2: Identificar f(n)
+
+    f(n) = n^k * log^p(n) = n^2 * log^0(n) = n^2
+
+
+Passo 3: Comparar f(n) com n^log_b(a)
+
+    f(n)       = n^2
+    n^log_b(a) = n^2
+
+    Sao IGUAIS! Portanto, f(n) = Theta(n^log_b(a))
+
+    CONCLUSAO: CASO 2
+
+
+POR QUE NAO E CASO 1?
+----------------------
+
+Para ser Caso 1, f(n) precisaria ser POLINOMIALMENTE MENOR que n^log_b(a).
+Ou seja, f(n) teria que crescer mais devagar que n^2.
+
+Exemplo correto de Caso 1 com a=4, b=2:
+
+    Se k=1 -> f(n) = n^1 = n
+
+    Comparando: n < n^2 (polinomialmente menor)
+
+    Ai sim seria Caso 1!
+
+
+RESUMO VISUAL
+--------------
+
+Exemplo do enunciado (a=4, b=2, k=2):
+
+    log_2(4) = 2
+    f(n) = n^2
+    n^log_b(a) = n^2
+
+    n^2 = n^2  ->  CASO 2
+
+
+Exemplo correto de Caso 1 (a=4, b=2, k=1):
+
+    log_2(4) = 2
+    f(n) = n^1 = n
+    n^log_b(a) = n^2
+
+    n < n^2  ->  CASO 1
+
+
+POSSIVEL ERRO NO ENUNCIADO
+---------------------------
+
+O professor pode ter:
+- Digitado k=2 quando queria k=1
+- Trocado os valores de a e b no exemplo
+- Ou simplesmente cometido um erro de digitacao
+
+A matematica e clara: quando k = log_b(a), e Caso 2.
